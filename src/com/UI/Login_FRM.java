@@ -4,6 +4,7 @@
  */
 package com.UI;
 
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,14 +16,14 @@ import javax.swing.JLabel;
  */
 public class Login_FRM extends javax.swing.JFrame {
 
-private ImageIcon image;
-private Icon icon;
-
+    int xMouse, yMouse;
+    private ImageIcon image;
+    private Icon icon;
 
     public Login_FRM() {
         initComponents();
         this.setLocationRelativeTo(this);
-        this.pintarImagen(jLabel1, "src\\com\\assets\\iniciar-sesion.png");
+        this.pintarImagen(img_saozcom, "src\\com\\assets\\iniciar-sesion.png");
 
     }
 
@@ -37,17 +38,20 @@ private Icon icon;
 
         background = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        pnl_header = new javax.swing.JPanel();
+        btn_close = new javax.swing.JPanel();
+        lbl_close = new javax.swing.JLabel();
         img_login = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        lbl_iniciar_sesion = new javax.swing.JLabel();
+        lbl_usuario = new javax.swing.JLabel();
+        txt_usuario = new javax.swing.JTextField();
+        lbl_contrasenia = new javax.swing.JLabel();
+        txt_contrasenia = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btn_login = new javax.swing.JPanel();
+        lbl_iniciar = new javax.swing.JLabel();
+        img_saozcom = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -60,48 +64,127 @@ private Icon icon;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        jLabel2.setText("INICIAR SESIÓN");
-
-        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        jLabel3.setText("USUARIO");
-
-        jTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Ingrese su nombre de usuario");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        pnl_header.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                pnl_headerMouseDragged(evt);
+            }
+        });
+        pnl_header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnl_headerMousePressed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        jLabel4.setText("CONTRASEÑA");
+        btn_close.setBackground(new java.awt.Color(255, 255, 255));
+        btn_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_closeMouseClicked(evt);
+            }
+        });
 
-        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(null);
+        lbl_close.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_close.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
+        lbl_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_close.setText("X");
+        lbl_close.setToolTipText("");
+        lbl_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_closeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbl_closeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbl_closeMouseExited(evt);
+            }
+        });
 
-        jPanel2.setBackground(new java.awt.Color(82, 197, 223));
-        jPanel2.setForeground(new java.awt.Color(82, 197, 223));
+        javax.swing.GroupLayout btn_closeLayout = new javax.swing.GroupLayout(btn_close);
+        btn_close.setLayout(btn_closeLayout);
+        btn_closeLayout.setHorizontalGroup(
+            btn_closeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbl_close, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+        );
+        btn_closeLayout.setVerticalGroup(
+            btn_closeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbl_close, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        );
 
-        jLabel5.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("INICIAR SESIÓN");
+        javax.swing.GroupLayout pnl_headerLayout = new javax.swing.GroupLayout(pnl_header);
+        pnl_header.setLayout(pnl_headerLayout);
+        pnl_headerLayout.setHorizontalGroup(
+            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_headerLayout.createSequentialGroup()
+                .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 781, Short.MAX_VALUE))
+        );
+        pnl_headerLayout.setVerticalGroup(
+            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btn_close, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+        lbl_iniciar_sesion.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        lbl_iniciar_sesion.setText("INICIAR SESIÓN");
+
+        lbl_usuario.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        lbl_usuario.setText("USUARIO");
+
+        txt_usuario.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_usuario.setForeground(new java.awt.Color(153, 153, 153));
+        txt_usuario.setText("Ingrese su nombre de usuario");
+        txt_usuario.setBorder(null);
+        txt_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txt_usuarioMousePressed(evt);
+            }
+        });
+        txt_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_usuarioActionPerformed(evt);
+            }
+        });
+
+        lbl_contrasenia.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        lbl_contrasenia.setText("CONTRASEÑA");
+
+        txt_contrasenia.setForeground(new java.awt.Color(153, 153, 153));
+        txt_contrasenia.setText("********");
+        txt_contrasenia.setToolTipText("");
+        txt_contrasenia.setBorder(null);
+        txt_contrasenia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txt_contraseniaMousePressed(evt);
+            }
+        });
+
+        btn_login.setBackground(new java.awt.Color(82, 197, 223));
+        btn_login.setForeground(new java.awt.Color(82, 197, 223));
+
+        lbl_iniciar.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        lbl_iniciar.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_iniciar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_iniciar.setText("INICIAR SESIÓN");
+        lbl_iniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbl_iniciarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbl_iniciarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_loginLayout = new javax.swing.GroupLayout(btn_login);
+        btn_login.setLayout(btn_loginLayout);
+        btn_loginLayout.setHorizontalGroup(
+            btn_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_loginLayout.createSequentialGroup()
+                .addComponent(lbl_iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+        btn_loginLayout.setVerticalGroup(
+            btn_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbl_iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -111,57 +194,57 @@ private Icon icon;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(img_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(123, 123, 123)
+                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1)
-                            .addComponent(jSeparator1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jSeparator2))))
-                .addGap(32, 32, 32))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator2)
+                            .addComponent(txt_contrasenia, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_usuario, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_iniciar_sesion, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_contrasenia, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_usuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(img_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addComponent(img_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(lbl_iniciar_sesion)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel3)
+                .addComponent(lbl_usuario)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(lbl_contrasenia)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 500));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/Captura.PNG"))); // NOI18N
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, -20, 720, 520));
+        img_saozcom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/Captura.PNG"))); // NOI18N
+        img_saozcom.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        img_saozcom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        background.add(img_saozcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, -20, 720, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,15 +254,75 @@ private Icon icon;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 497, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_usuarioActionPerformed
+
+    private void pnl_headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_pnl_headerMousePressed
+
+    private void pnl_headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_headerMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_pnl_headerMouseDragged
+
+    private void lbl_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_closeMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lbl_closeMouseClicked
+
+    private void lbl_closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_closeMouseEntered
+        btn_close.setBackground(Color.RED);
+        lbl_close.setForeground(Color.WHITE);
+    }//GEN-LAST:event_lbl_closeMouseEntered
+
+    private void lbl_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_closeMouseExited
+        btn_close.setBackground(Color.WHITE);
+        lbl_close.setForeground(Color.BLACK);
+    }//GEN-LAST:event_lbl_closeMouseExited
+
+    private void btn_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btn_closeMouseClicked
+
+    private void lbl_iniciarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseEntered
+        btn_login.setBackground(new Color(1, 62, 111));
+    }//GEN-LAST:event_lbl_iniciarMouseEntered
+
+    private void lbl_iniciarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseExited
+        btn_login.setBackground(new Color(82, 197, 223));
+    }//GEN-LAST:event_lbl_iniciarMouseExited
+
+    private void txt_usuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_usuarioMousePressed
+        if (txt_usuario.getText().equals("Ingrese su nombre de usuario")) {
+            txt_usuario.setText("");
+            txt_usuario.setForeground(Color.BLACK);
+        }
+        if (txt_contrasenia.getText().isEmpty()) {
+            txt_contrasenia.setText("********");
+            txt_contrasenia.setForeground(Color.GRAY);
+        }
+
+    }//GEN-LAST:event_txt_usuarioMousePressed
+
+    private void txt_contraseniaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_contraseniaMousePressed
+        if (txt_contrasenia.getText().equals("********")) {
+            txt_contrasenia.setText("");
+            txt_contrasenia.setForeground(Color.BLACK);
+        }
+        if (txt_usuario.getText().isEmpty()) {
+            txt_usuario.setText("Ingrese su nombre de usuario");
+            txt_usuario.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txt_contraseniaMousePressed
 
     /**
      * @param args the command line arguments
@@ -218,29 +361,29 @@ private Icon icon;
 
     private void pintarImagen(JLabel lbl, String ruta) {
 
-            this.image = new ImageIcon(ruta);
-            this.icon = new ImageIcon(this.image.getImage().getScaledInstance(img_login.getWidth(), img_login.getHeight(), Image.SCALE_DEFAULT));
-            img_login.setIcon(this.icon);
-            this.repaint();
-              
-            
-        
+        this.image = new ImageIcon(ruta);
+        this.icon = new ImageIcon(this.image.getImage().getScaledInstance(img_login.getWidth(), img_login.getHeight(), Image.SCALE_DEFAULT));
+        img_login.setIcon(this.icon);
+        this.repaint();
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JPanel btn_close;
+    private javax.swing.JPanel btn_login;
     private javax.swing.JLabel img_login;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel img_saozcom;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbl_close;
+    private javax.swing.JLabel lbl_contrasenia;
+    private javax.swing.JLabel lbl_iniciar;
+    private javax.swing.JLabel lbl_iniciar_sesion;
+    private javax.swing.JLabel lbl_usuario;
+    private javax.swing.JPanel pnl_header;
+    private javax.swing.JPasswordField txt_contrasenia;
+    private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
