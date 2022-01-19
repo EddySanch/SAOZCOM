@@ -4,11 +4,14 @@
  */
 package com.UI;
 
+import com.communication.UserBD;
+import com.enums.AutenticationMessage;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -160,12 +163,20 @@ public class Login_FRM extends javax.swing.JFrame {
 
         btn_login.setBackground(new java.awt.Color(82, 197, 223));
         btn_login.setForeground(new java.awt.Color(82, 197, 223));
+        btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_loginMouseClicked(evt);
+            }
+        });
 
         lbl_iniciar.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
         lbl_iniciar.setForeground(new java.awt.Color(255, 255, 255));
         lbl_iniciar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_iniciar.setText("INICIAR SESIÓN");
         lbl_iniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_iniciarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbl_iniciarMouseEntered(evt);
             }
@@ -320,9 +331,38 @@ public class Login_FRM extends javax.swing.JFrame {
         }
         if (txt_usuario.getText().isEmpty()) {
             txt_usuario.setText("Ingrese su nombre de usuario");
-            txt_usuario.setForeground(Color.gray);
+            txt_usuario.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txt_contraseniaMousePressed
+
+    private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
+    
+    }//GEN-LAST:event_btn_loginMouseClicked
+
+    private void lbl_iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseClicked
+        System.out.println("Here");
+        int validate = validateFields();
+        AutenticationMessage loginMessage;
+
+        switch (validate) {
+            case 1:
+                JOptionPane.showMessageDialog(null, "Agregar un usuario válido", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos",  JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 3:
+                loginMessage = new UserBD().login(txt_usuario.getText(), txt_contrasenia.getText());
+                System.out.println(loginMessage);
+                switch (loginMessage) {
+                    case LOGIN_SUCCESFULL:
+                        System.out.println("Login correcto");
+                        break;
+                    
+                }
+                break;
+        }
+    }//GEN-LAST:event_lbl_iniciarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -365,7 +405,19 @@ public class Login_FRM extends javax.swing.JFrame {
         this.icon = new ImageIcon(this.image.getImage().getScaledInstance(img_login.getWidth(), img_login.getHeight(), Image.SCALE_DEFAULT));
         img_login.setIcon(this.icon);
         this.repaint();
+    }
 
+    private int validateFields() {
+
+        if (txt_usuario.getText().equals("Ingrese su nombre de usuario")
+                || txt_usuario.getText().isEmpty()) {
+            return 1;
+        }
+        if (txt_contrasenia.getText().equals("********")
+                || txt_contrasenia.getText().isEmpty()) {
+            return 2;
+        }
+        return 3;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
