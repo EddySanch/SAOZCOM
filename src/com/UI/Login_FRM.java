@@ -7,9 +7,11 @@ package com.UI;
 import com.communication.UserBD;
 import com.enums.AutenticationMessage;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -18,16 +20,17 @@ import javax.swing.JOptionPane;
  * @author eddy2
  */
 public class Login_FRM extends javax.swing.JFrame {
-
+    
+    private static Dimension screenSize = new Dimension();
     int xMouse, yMouse;
     private ImageIcon image;
     private Icon icon;
-
+    
     public Login_FRM() {
         initComponents();
         this.setLocationRelativeTo(this);
         this.pintarImagen(img_saozcom, "src\\com\\assets\\iniciar-sesion.png");
-
+        
     }
 
     /**
@@ -336,27 +339,34 @@ public class Login_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_contraseniaMousePressed
 
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
-    
+
     }//GEN-LAST:event_btn_loginMouseClicked
 
     private void lbl_iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseClicked
-        System.out.println("Here");
+        
         int validate = validateFields();
         AutenticationMessage loginMessage;
-
+        
         switch (validate) {
             case 1:
                 JOptionPane.showMessageDialog(null, "Agregar un usuario válido", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 2:
-                JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos",  JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 3:
                 loginMessage = new UserBD().login(txt_usuario.getText(), txt_contrasenia.getText());
                 System.out.println(loginMessage);
                 switch (loginMessage) {
                     case LOGIN_SUCCESFULL:
-                        System.out.println("Login correcto");
+                        showMain();
+                        this.dispose();
+                        break;
+                    case USER_NOPASS:
+                        JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                    case NO_USER:
+                        JOptionPane.showMessageDialog(null, "El usuario no existe", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     
                 }
@@ -398,17 +408,17 @@ public class Login_FRM extends javax.swing.JFrame {
             }
         });
     }
-
+    
     private void pintarImagen(JLabel lbl, String ruta) {
-
+        
         this.image = new ImageIcon(ruta);
         this.icon = new ImageIcon(this.image.getImage().getScaledInstance(img_login.getWidth(), img_login.getHeight(), Image.SCALE_DEFAULT));
         img_login.setIcon(this.icon);
         this.repaint();
     }
-
+    
     private int validateFields() {
-
+        
         if (txt_usuario.getText().equals("Ingrese su nombre de usuario")
                 || txt_usuario.getText().isEmpty()) {
             return 1;
@@ -418,6 +428,13 @@ public class Login_FRM extends javax.swing.JFrame {
             return 2;
         }
         return 3;
+    }
+    
+    private void showMain() {
+        JFrame main = new Main_FRM();
+        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        main.pack();
+        main.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
