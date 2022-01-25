@@ -6,13 +6,10 @@ package com.UI;
 
 import com.communication.UserBD;
 import com.enums.AutenticationMessage;
+import com.utilities.FrameUtilities;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,17 +17,15 @@ import javax.swing.JOptionPane;
  * @author eddy2
  */
 public class Login_FRM extends javax.swing.JFrame {
-    
-    private static Dimension screenSize = new Dimension();
+
     int xMouse, yMouse;
-    private ImageIcon image;
-    private Icon icon;
-    
+    private boolean isFirsEnterKey = true;
+
     public Login_FRM() {
         initComponents();
         this.setLocationRelativeTo(this);
-        this.pintarImagen(img_saozcom, "src\\com\\assets\\iniciar-sesion.png");
-        
+        FrameUtilities.adaptImagenToLbl(this, img_login, "src\\com\\assets\\iniciar-sesion.png");
+
     }
 
     /**
@@ -140,6 +135,11 @@ public class Login_FRM extends javax.swing.JFrame {
         txt_usuario.setForeground(new java.awt.Color(153, 153, 153));
         txt_usuario.setText("Ingrese su nombre de usuario");
         txt_usuario.setBorder(null);
+        txt_usuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_usuarioFocusGained(evt);
+            }
+        });
         txt_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txt_usuarioMousePressed(evt);
@@ -158,9 +158,19 @@ public class Login_FRM extends javax.swing.JFrame {
         txt_contrasenia.setText("********");
         txt_contrasenia.setToolTipText("");
         txt_contrasenia.setBorder(null);
+        txt_contrasenia.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_contraseniaFocusGained(evt);
+            }
+        });
         txt_contrasenia.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txt_contraseniaMousePressed(evt);
+            }
+        });
+        txt_contrasenia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_contraseniaKeyReleased(evt);
             }
         });
 
@@ -316,26 +326,11 @@ public class Login_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_lbl_iniciarMouseExited
 
     private void txt_usuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_usuarioMousePressed
-        if (txt_usuario.getText().equals("Ingrese su nombre de usuario")) {
-            txt_usuario.setText("");
-            txt_usuario.setForeground(Color.BLACK);
-        }
-        if (txt_contrasenia.getText().isEmpty()) {
-            txt_contrasenia.setText("********");
-            txt_contrasenia.setForeground(Color.GRAY);
-        }
-
+        textHolderTxtUser();
     }//GEN-LAST:event_txt_usuarioMousePressed
 
     private void txt_contraseniaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_contraseniaMousePressed
-        if (txt_contrasenia.getText().equals("********")) {
-            txt_contrasenia.setText("");
-            txt_contrasenia.setForeground(Color.BLACK);
-        }
-        if (txt_usuario.getText().isEmpty()) {
-            txt_usuario.setText("Ingrese su nombre de usuario");
-            txt_usuario.setForeground(Color.GRAY);
-        }
+        textHolderTxtPass();
     }//GEN-LAST:event_txt_contraseniaMousePressed
 
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
@@ -343,36 +338,27 @@ public class Login_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_loginMouseClicked
 
     private void lbl_iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseClicked
-        
-        int validate = validateFields();
-        AutenticationMessage loginMessage;
-        
-        switch (validate) {
-            case 1:
-                JOptionPane.showMessageDialog(null, "Agregar un usuario válido", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case 2:
-                JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
-                break;
-            case 3:
-                loginMessage = new UserBD().login(txt_usuario.getText(), txt_contrasenia.getText());
-                System.out.println(loginMessage);
-                switch (loginMessage) {
-                    case LOGIN_SUCCESFULL:
-                        showMain();
-                        this.dispose();
-                        break;
-                    case USER_NOPASS:
-                        JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
-                        break;
-                    case NO_USER:
-                        JOptionPane.showMessageDialog(null, "El usuario no existe", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
-                        break;
-                    
-                }
-                break;
-        }
+        logIn();
     }//GEN-LAST:event_lbl_iniciarMouseClicked
+
+    private void txt_usuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_usuarioFocusGained
+        textHolderTxtUser();
+    }//GEN-LAST:event_txt_usuarioFocusGained
+
+    private void txt_contraseniaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_contraseniaFocusGained
+        textHolderTxtPass();
+    }//GEN-LAST:event_txt_contraseniaFocusGained
+
+    private void txt_contraseniaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contraseniaKeyReleased
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
+            if (isFirsEnterKey) {
+                logIn();
+                isFirsEnterKey = false;
+            } else {
+                isFirsEnterKey = true;
+            }
+        }
+    }//GEN-LAST:event_txt_contraseniaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -408,17 +394,9 @@ public class Login_FRM extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void pintarImagen(JLabel lbl, String ruta) {
-        
-        this.image = new ImageIcon(ruta);
-        this.icon = new ImageIcon(this.image.getImage().getScaledInstance(img_login.getWidth(), img_login.getHeight(), Image.SCALE_DEFAULT));
-        img_login.setIcon(this.icon);
-        this.repaint();
-    }
-    
+
     private int validateFields() {
-        
+
         if (txt_usuario.getText().equals("Ingrese su nombre de usuario")
                 || txt_usuario.getText().isEmpty()) {
             return 1;
@@ -429,13 +407,74 @@ public class Login_FRM extends javax.swing.JFrame {
         }
         return 3;
     }
-    
+
     private void showMain() {
         JFrame main = new Main_FRM();
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        main.setResizable(true);
+        main.setExtendedState(JFrame.MAXIMIZED_BOTH);
         main.pack();
         main.setVisible(true);
     }
+
+    private void textHolderTxtUser() {
+        if (txt_usuario.getText().equals("Ingrese su nombre de usuario")) {
+            txt_usuario.setText("");
+            txt_usuario.setForeground(Color.BLACK);
+        }
+
+        if (txt_contrasenia.getText().isEmpty()) {
+            txt_contrasenia.setText("********");
+            txt_contrasenia.setForeground(Color.GRAY);
+        }
+
+    }
+
+    private void textHolderTxtPass() {
+        if (txt_contrasenia.getText().equals("********")) {
+            txt_contrasenia.setText("");
+            txt_contrasenia.setForeground(Color.BLACK);
+        }
+
+        if (txt_usuario.getText().isEmpty()) {
+            txt_usuario.setText("Ingrese su nombre de usuario");
+            txt_usuario.setForeground(Color.GRAY);
+        }
+
+    }
+
+    private void logIn() {
+        int validate = validateFields();
+        AutenticationMessage loginMessage;
+
+        switch (validate) {
+            case 1:
+                JOptionPane.showMessageDialog(null, "Agregar un usuario válido", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 3:
+                loginMessage = new UserBD().login(txt_usuario.getText(), txt_contrasenia.getText());
+                System.out.println(loginMessage);
+                switch (loginMessage) {
+                    case LOGIN_SUCCESFULL:
+                        showMain();
+                        this.dispose();
+                        break;
+                    case USER_NOPASS:
+                        JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                    case NO_USER:
+                        JOptionPane.showMessageDialog(null, "El usuario no existe", "Verificar los valores", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+
+                }
+                break;
+        }
+    }
+
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
