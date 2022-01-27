@@ -4,7 +4,7 @@
  */
 package com.UI;
 
-import com.communication.UserBD;
+import com.communication.UserDB;
 import com.enums.AutenticationMessage;
 import com.utilities.FrameUtilities;
 import java.awt.Color;
@@ -455,7 +455,7 @@ public class Login_FRM extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Agregar una contraseña válida", "Verificar campos", JOptionPane.INFORMATION_MESSAGE);
                 break;
             case 3:
-                loginMessage = new UserBD().login(txt_usuario.getText(), txt_contrasenia.getText());
+                loginMessage = new UserDB().login(txt_usuario.getText(), txt_contrasenia.getText());
                 System.out.println(loginMessage);
                 switch (loginMessage) {
                     case LOGIN_SUCCESFULL:
