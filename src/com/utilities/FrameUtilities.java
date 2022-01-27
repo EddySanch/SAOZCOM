@@ -4,7 +4,9 @@
  */
 package com.utilities;
 
+import com.UI.Main_FRM;
 import java.awt.Dimension;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
@@ -69,6 +71,37 @@ public class FrameUtilities {
         ImageIcon image = new ImageIcon(ruta);
         lbl.setIcon(image);
         frame.repaint();
+    }
+
+    public static void extender(JFrame frame) {
+        GraphicsEnvironment env
+                = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        frame.setMaximizedBounds(env.getMaximumWindowBounds());
+        frame.setExtendedState(frame.getExtendedState() | frame.MAXIMIZED_BOTH);
+    }
+
+    public static boolean isClosed(Main_FRM main, JInternalFrame frame) {
+        JInternalFrame[] actives = main.container.getAllFrames();
+        boolean closed = true;
+        int i = 0;
+
+        while (i < actives.length && closed) {
+
+            if (actives[i].getClass() == frame.getClass()) {
+
+                closed = false;
+            }
+
+            i++;
+        }
+        return closed;
+    }
+
+    public static void OpenInternalFrame(JInternalFrame frame, Main_FRM main) {
+        if (isClosed(main, frame)) {
+            main.container.add(frame);
+            frame.setVisible(true);
+        }
     }
 
 }

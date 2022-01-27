@@ -21,21 +21,27 @@ public class ConnectionBD {
     private static final String URL = "jdbc:mysql://localhost:3306/saozcomdb";
     private static Connection conn;
 
-    public ConnectionBD() {
-        conn = null;
-    }
 
-    public Connection getConnection() {
-        try {
-            conn = DriverManager.getConnection(URL, USER, PASS);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error oon la base de datos", JOptionPane.ERROR_MESSAGE);
+    public static Connection getConnection() {
+        if (conn != null)//verifica si con tiene la conexion
+        {
+            return conn;
+        } else {
+            try {
+                conn = DriverManager.getConnection(URL, USER, PASS);
+                if (conn != null) {
+                    return conn;
+                } else {
+                    return null;
+                }
+            } catch (Exception e) {
+                e.getCause();
+                return null;
+            }
         }
-        return conn;
     }
 
-    public void desconectar() {
+    public static void desconectar() {
         try {
             conn.close();
 

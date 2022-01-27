@@ -11,15 +11,41 @@ package com.classes;
 public class User {
 
     private int id;
+    private String name;
+    private String lastname;
+    private String phone;
+    private String email;
     private String username;
     private String pass;
-    private String name;
     private String role;
     private static User instance;
 
-    private User() {
+    public User() {
 
     }
+
+    public User(String name, String lastname, String phone, String email, String username, String pass, String role) {
+        this.name = name;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.email = email;
+        this.username = username;
+        this.pass = pass;
+        this.role = role;
+    }
+
+    public User(int id, String name, String lastname, String phone, String email, String username, String pass, String role) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.email = email;
+        this.username = username;
+        this.pass = pass;
+        this.role = role;
+    }
+
+
 
     public int getId() {
         return id;
@@ -27,6 +53,38 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -45,15 +103,7 @@ public class User {
         this.pass = pass;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIdRole() {
+    public String getRole() {
         return role;
     }
 
