@@ -27,6 +27,7 @@ public class ConnectionBD {
         {
             return conn;
         } else {
+
             try {
                 conn = DriverManager.getConnection(URL, USER, PASS);
                 if (conn != null) {
