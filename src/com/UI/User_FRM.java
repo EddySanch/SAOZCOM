@@ -400,11 +400,12 @@ public class User_FRM extends javax.swing.JInternalFrame {
         );
         pnl_spaceLayout.setVerticalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 506, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
         pnl_center.add(pnl_space, java.awt.BorderLayout.LINE_START);
 
+        tbl_users.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         tbl_users.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

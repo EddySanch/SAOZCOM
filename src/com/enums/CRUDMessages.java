@@ -14,9 +14,11 @@ public enum CRUDMessages {
     UPDATE_SUCCESFULLY,
     UPDATE_FAILED,
     DELETE_SUCCESFULLY,
-    DELETE_FAILED;
+    DELETE_FAILED,
+    EMPTY_FIELDS;
 
-private String name;
+    private String name;
+
     @Override
     public String toString() {
         return this.name;
