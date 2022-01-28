@@ -12,7 +12,5 @@ public enum AutenticationMessage {
     USER_NOPASS,
     NO_USER,
     BD_ERROR,
-    LOGIN_SUCCESFULL,
-    USER_EXIST,
-    USER_NO_EXIST
+    LOGIN_SUCCESFULL;
 }

@@ -157,47 +157,49 @@ public class Main_FRM extends javax.swing.JFrame {
         });
         btn_usuers.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel1.setText("          Usuarios");
+        jLabel1.setText("  Usuarios");
         btn_usuers.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_usuers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 380, 50));
-        MenuIcon.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 380, 10));
-        MenuIcon.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 380, 10));
+        MenuIcon.add(btn_usuers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 50));
+        MenuIcon.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 160, 10));
+        MenuIcon.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 160, 10));
 
         btn_material.setBackground(new java.awt.Color(5, 10, 46));
         btn_material.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel2.setText("          Material");
+        jLabel2.setText("  Material");
         btn_material.add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 380, 50));
-        MenuIcon.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 380, 10));
+        MenuIcon.add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 150, 50));
+        MenuIcon.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 160, 10));
 
         btn_entry.setBackground(new java.awt.Color(5, 10, 46));
         btn_entry.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel3.setText("          Usuarios");
+        jLabel3.setText("  Usuarios");
         btn_entry.add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_entry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 380, 48));
+        MenuIcon.add(btn_entry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 150, 48));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MenuIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(MenuIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

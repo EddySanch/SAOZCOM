@@ -33,6 +33,8 @@ public class User_FRM extends javax.swing.JInternalFrame {
         btn_new = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
+        btn_cancel = new javax.swing.JButton();
+        btn_save = new javax.swing.JButton();
         pnl_left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -54,8 +56,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
         txt_pass = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         cmb_role = new javax.swing.JComboBox<>();
-        btn_cancel = new javax.swing.JButton();
-        btn_save = new javax.swing.JButton();
         pnl_center = new javax.swing.JPanel();
         pnl_space = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -137,8 +137,8 @@ public class User_FRM extends javax.swing.JInternalFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 109, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.PAGE_END);
@@ -197,18 +197,46 @@ public class User_FRM extends javax.swing.JInternalFrame {
             }
         });
 
+        btn_cancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
+        btn_cancel.setText("Cancelar");
+        btn_cancel.setBorderPainted(false);
+        btn_cancel.setContentAreaFilled(false);
+        btn_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelActionPerformed(evt);
+            }
+        });
+
+        btn_save.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
+        btn_save.setText("Guardar");
+        btn_save.setBorderPainted(false);
+        btn_save.setContentAreaFilled(false);
+        btn_save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_footerLayout = new javax.swing.GroupLayout(pnl_footer);
         pnl_footer.setLayout(pnl_footerLayout);
         pnl_footerLayout.setHorizontalGroup(
             pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_footerLayout.createSequentialGroup()
-                .addContainerGap(1676, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addComponent(btn_save)
+                .addGap(38, 38, 38)
+                .addComponent(btn_cancel)
+                .addGap(33, 33, 33)
                 .addComponent(btn_new)
-                .addGap(186, 186, 186)
+                .addGap(70, 70, 70)
                 .addComponent(btn_edit)
-                .addGap(188, 188, 188)
+                .addGap(63, 63, 63)
                 .addComponent(btn_delete)
-                .addGap(23, 23, 23))
+                .addContainerGap(1623, Short.MAX_VALUE))
         );
         pnl_footerLayout.setVerticalGroup(
             pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +245,9 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 .addGroup(pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_delete)
                     .addComponent(btn_edit)
-                    .addComponent(btn_new))
+                    .addComponent(btn_new)
+                    .addComponent(btn_cancel)
+                    .addComponent(btn_save))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -274,30 +304,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
         cmb_role.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         cmb_role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
 
-        btn_cancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
-        btn_cancel.setText("Cancelar");
-        btn_cancel.setBorderPainted(false);
-        btn_cancel.setContentAreaFilled(false);
-        btn_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelActionPerformed(evt);
-            }
-        });
-
-        btn_save.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
-        btn_save.setText("Guardar");
-        btn_save.setBorderPainted(false);
-        btn_save.setContentAreaFilled(false);
-        btn_save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_saveActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnl_leftLayout = new javax.swing.GroupLayout(pnl_left);
         pnl_left.setLayout(pnl_leftLayout);
         pnl_leftLayout.setHorizontalGroup(
@@ -328,12 +334,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnl_leftLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnl_leftLayout.createSequentialGroup()
-                                .addComponent(btn_save)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_cancel))
-                            .addComponent(cmb_role, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(cmb_role, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnl_leftLayout.setVerticalGroup(
@@ -379,11 +380,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cmb_role)
-                .addGap(28, 28, 28)
-                .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancel)
-                    .addComponent(btn_save))
-                .addContainerGap())
+                .addGap(86, 86, 86))
         );
 
         jPanel1.add(pnl_left, java.awt.BorderLayout.LINE_START);
@@ -396,11 +393,11 @@ public class User_FRM extends javax.swing.JInternalFrame {
         pnl_space.setLayout(pnl_spaceLayout);
         pnl_spaceLayout.setHorizontalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+            .addGap(0, 12, Short.MAX_VALUE)
         );
         pnl_spaceLayout.setVerticalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         pnl_center.add(pnl_space, java.awt.BorderLayout.LINE_START);

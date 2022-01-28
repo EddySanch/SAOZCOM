@@ -16,12 +16,14 @@ public class MessagesGUI {
     public static void showMessage(CRUDMessages message) {
         switch (message) {
             case EMPTY_FIELDS:
-                JOptionPane.showMessageDialog(null, "No pueden haber campos vacios", "Campos Vacios", 0);
+                JOptionPane.showMessageDialog(null, "No pueden haber campos vacios", "Campos Vacios", JOptionPane.INFORMATION_MESSAGE);
                 break;
-            case REGISTER_SUCCESFULLY :
-               
+            case REGISTER_SUCCESFULLY:
+                JOptionPane.showMessageDialog(null, "El usuario se ha registrado satisfactoriamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
                 break;
-        }
+            case USER_EXIST:
+                JOptionPane.showMessageDialog(null, "El nombre de usuario ya existe, intente con otro", "Usuario existente", JOptionPane.INFORMATION_MESSAGE);
+                }
 
+        }
     }
-}
