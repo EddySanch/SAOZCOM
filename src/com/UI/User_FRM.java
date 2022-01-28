@@ -232,11 +232,11 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 .addComponent(btn_cancel)
                 .addGap(33, 33, 33)
                 .addComponent(btn_new)
-                .addGap(70, 70, 70)
+                .addGap(51, 51, 51)
                 .addComponent(btn_edit)
-                .addGap(63, 63, 63)
+                .addGap(65, 65, 65)
                 .addComponent(btn_delete)
-                .addContainerGap(1623, Short.MAX_VALUE))
+                .addContainerGap(1640, Short.MAX_VALUE))
         );
         pnl_footerLayout.setVerticalGroup(
             pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,53 +255,53 @@ public class User_FRM extends javax.swing.JInternalFrame {
 
         pnl_left.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nombre");
 
-        txtName.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtName.setBorder(null);
 
-        txt_surname.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_surname.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txt_surname.setBorder(null);
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Apellidos");
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Teléfono");
 
-        txt_phone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_phone.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txt_phone.setBorder(null);
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Correo");
 
-        txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_email.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txt_email.setBorder(null);
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Usuario");
 
-        txt_user.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_user.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txt_user.setBorder(null);
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Contraseña");
 
-        txt_pass.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txt_pass.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txt_pass.setBorder(null);
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Rol");
 
-        cmb_role.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cmb_role.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cmb_role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
 
         javax.swing.GroupLayout pnl_leftLayout = new javax.swing.GroupLayout(pnl_left);
@@ -341,45 +341,45 @@ public class User_FRM extends javax.swing.JInternalFrame {
             pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_leftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(txtName)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_surname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator4)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
                 .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addComponent(jSeparator5)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_email)
+                .addComponent(txt_email, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator6)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addGap(5, 5, 5)
-                .addComponent(txt_user)
+                .addComponent(txt_user, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator7)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addGap(5, 5, 5)
-                .addComponent(txt_pass)
+                .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmb_role)
+                .addComponent(cmb_role, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addGap(86, 86, 86))
         );
 
