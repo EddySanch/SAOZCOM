@@ -4,7 +4,7 @@
  */
 package com.utilities;
 
-import com.UI.Main_FRM;
+import com.UI.Example;
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
@@ -80,7 +80,7 @@ public class FrameUtilities {
         frame.setExtendedState(frame.getExtendedState() | frame.MAXIMIZED_BOTH);
     }
 
-    public static boolean isClosed(Main_FRM main, JInternalFrame frame) {
+    public static boolean isClosed(Example main, JInternalFrame frame) {
         JInternalFrame[] actives = main.container.getAllFrames();
         boolean closed = true;
         int i = 0;
@@ -97,7 +97,7 @@ public class FrameUtilities {
         return closed;
     }
 
-    public static void OpenInternalFrame(JInternalFrame frame, Main_FRM main) {
+    public static void OpenInternalFrame(JInternalFrame frame, Example main) {
         if (isClosed(main, frame)) {
             main.container.add(frame);
             frame.setVisible(true);

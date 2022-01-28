@@ -338,6 +338,7 @@ public class Login_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_loginMouseClicked
 
     private void lbl_iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iniciarMouseClicked
+
         logIn();
     }//GEN-LAST:event_lbl_iniciarMouseClicked
 
@@ -409,10 +410,10 @@ public class Login_FRM extends javax.swing.JFrame {
     }
 
     private void showMain() {
-        JFrame main = new Main_FRM();
-        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        main.setResizable(true);
-        main.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        JFrame main = new Example();
+        //main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //main.setResizable(true);
+        //main.setExtendedState(JFrame.MAXIMIZED_BOTH);
         main.pack();
         main.setVisible(true);
     }
@@ -474,7 +475,6 @@ public class Login_FRM extends javax.swing.JFrame {
         }
     }
 
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

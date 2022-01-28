@@ -5,7 +5,6 @@
  */
 package com.UI;
 
-import com.controllers.UserController;
 import com.utilities.FrameUtilities;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -34,7 +33,7 @@ public class Main_FRM extends javax.swing.JFrame {
 
         initComponents();
         FrameUtilities.extender(this);
-        UserController con = new UserController(this);
+        //UserController con = new UserController(this);
 
     }
 
