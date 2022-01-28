@@ -23,7 +23,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class UserController implements ActionListener, MouseListener {
-    
+
     private UserDB userDB;
     private User user;
     private User_FRM user_FRM;
@@ -84,6 +84,7 @@ public class UserController implements ActionListener, MouseListener {
         user.setPass(user_FRM.txt_pass.getText());
         user.setRole(user_FRM.cmb_role.getSelectedItem().toString());
         return user;
+//""
     }
 
     private boolean validateFields() {
@@ -108,7 +109,6 @@ public class UserController implements ActionListener, MouseListener {
         return true;
     }
 
-
     private void clearFields() {
         user_FRM.txtName.setText("");
         user_FRM.txt_surname.setText("");
@@ -126,29 +126,29 @@ public class UserController implements ActionListener, MouseListener {
             System.out.println(e);
         }
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
     }
-    
+
     @Override
     public void mousePressed(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public void mouseReleased(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public void mouseEntered(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
