@@ -8,6 +8,7 @@ import com.UI.Main_FRM;
 import com.UI.User_FRM;
 import com.classes.User;
 import com.communication.UserDB;
+import static com.enums.CRUDMessages.EMPTY_FIELDS;
 import com.enums.DataBaseActions;
 import static com.enums.DataBaseActions.CANCEL;
 import static com.enums.DataBaseActions.DELETE_REGISTER;
@@ -15,18 +16,19 @@ import static com.enums.DataBaseActions.NEW_REGISTER;
 import static com.enums.DataBaseActions.SAVE_REGITER;
 import static com.enums.DataBaseActions.UPDATE_REGISTER;
 import com.utilities.FrameUtilities;
+import com.utilities.MessagesGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class UserController implements ActionListener, MouseListener {
-
+    
     private UserDB userDB;
     private User user;
     private User_FRM user_FRM;
     private Main_FRM main;
-
+    
     public UserController(Main_FRM main) {
         this.user_FRM = new User_FRM();
         userDB = new UserDB();
@@ -34,7 +36,7 @@ public class UserController implements ActionListener, MouseListener {
         FrameUtilities.OpenInternalFrame(user_FRM, this.main);
         addListeners();
     }
-
+    
     private void addListeners() {
 //Set Command to items
         user_FRM.btn_save.setActionCommand(SAVE_REGITER.toString());
@@ -55,22 +57,26 @@ public class UserController implements ActionListener, MouseListener {
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         DataBaseActions actions = DataBaseActions.valueOf(e.getActionCommand());
-
+        
         switch (actions) {
             case SAVE_REGITER:
-                userDB.registerUser(getUser());
+                if (validateFields()) {
 
+                    //userDB.isUserRegistered(getUser().getUsername()) == USER_NO_EXIST ? userDB.registerUser(getUser()) : "";
+                } else {
+                    MessagesGUI.showMessage(EMPTY_FIELDS);
+                }
                 break;
-
+            
         }
     }
-
+    
     private User getUser() {
         user = new User();
         user.setName(user_FRM.txtName.getText());
@@ -82,29 +88,51 @@ public class UserController implements ActionListener, MouseListener {
         user.setRole(user_FRM.cmb_role.getSelectedItem().toString());
         return user;
     }
-
+    
+    private boolean validateFields() {
+        if (user_FRM.txtName.getText().isEmpty()) {
+            return false;
+        }
+        if (user_FRM.txt_surname.getText().isEmpty()) {
+            return false;
+        }
+        if (user_FRM.txt_phone.getText().isEmpty()) {
+            return false;
+        }
+        if (user_FRM.txt_email.getText().isEmpty()) {
+            return false;
+        }
+        if (user_FRM.txt_user.getText().isEmpty()) {
+            return false;
+        }
+        if (user_FRM.txt_pass.getText().isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+    
     @Override
     public void mouseClicked(MouseEvent e) {
     }
-
+    
     @Override
     public void mousePressed(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void mouseReleased(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void mouseEntered(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

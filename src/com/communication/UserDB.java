@@ -10,7 +10,9 @@ import com.enums.AutenticationMessage;
 import static com.enums.AutenticationMessage.BD_ERROR;
 import static com.enums.AutenticationMessage.LOGIN_SUCCESFULL;
 import static com.enums.AutenticationMessage.NO_USER;
+import static com.enums.AutenticationMessage.USER_EXIST;
 import static com.enums.AutenticationMessage.USER_NOPASS;
+import static com.enums.AutenticationMessage.USER_NO_EXIST;
 import com.enums.CRUDMessages;
 import static com.enums.CRUDMessages.REGISTER_FAILED;
 import static com.enums.CRUDMessages.REGISTER_SUCCESFULLY;
@@ -70,7 +72,7 @@ public class UserDB {
 
         } catch (Exception e) {
             System.err.println("Error al obtener los datos : " + e.getMessage());
-       }
+        }
         return defaultTbl;
     }
 
@@ -93,6 +95,29 @@ public class UserDB {
             } else {
                 return NO_USER;
 
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return BD_ERROR;
+        }
+    }
+
+    public AutenticationMessage isUserRegistered(String user) {
+        String query = "select * from user where user = ?";
+        try {
+
+            conn = ConnectionBD.getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, user);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+
+                return USER_EXIST;
+
+            } else {
+                return USER_NO_EXIST;
             }
 
         } catch (Exception e) {
