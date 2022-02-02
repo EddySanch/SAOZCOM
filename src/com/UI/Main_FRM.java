@@ -1,25 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.UI;
 
 import com.controllers.UserController;
 import com.utilities.FrameUtilities;
 import java.awt.Color;
-import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 /**
  *
- * @author ThinkPad
+ * @author eddy2
  */
 public class Main_FRM extends javax.swing.JFrame {
 
-    int xMouse, yMouse;
-    boolean a = false;
-
+    /**
+     * Creates new form Example
+     */
     public Main_FRM() {
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -34,8 +32,7 @@ public class Main_FRM extends javax.swing.JFrame {
 
         initComponents();
         FrameUtilities.extender(this);
-        UserController con = new UserController(this);
-
+        UserController user = new UserController(this);
     }
 
     /**
@@ -47,16 +44,7 @@ public class Main_FRM extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Header = new javax.swing.JPanel();
-        iconminmaxclose = new javax.swing.JPanel();
-        Buttonclose = new javax.swing.JPanel();
-        close = new javax.swing.JLabel();
-        Buttonmax = new javax.swing.JPanel();
-        fullmax = new javax.swing.JLabel();
-        ButtonMin = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        MenuIcon = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         btn_usuers = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -66,85 +54,12 @@ public class Main_FRM extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         btn_entry = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         container = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
-        Header.setBackground(new java.awt.Color(5, 10, 46));
-        Header.setPreferredSize(new java.awt.Dimension(800, 50));
-        Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                HeaderMouseDragged(evt);
-            }
-        });
-        Header.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                HeaderMousePressed(evt);
-            }
-        });
-        Header.setLayout(new java.awt.BorderLayout());
-
-        iconminmaxclose.setBackground(new java.awt.Color(5, 10, 46));
-        iconminmaxclose.setPreferredSize(new java.awt.Dimension(150, 50));
-        iconminmaxclose.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Buttonclose.setBackground(new java.awt.Color(5, 10, 46));
-        Buttonclose.setLayout(new java.awt.BorderLayout());
-
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/delete_32px.png"))); // NOI18N
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                closeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                closeMouseExited(evt);
-            }
-        });
-        Buttonclose.add(close, java.awt.BorderLayout.CENTER);
-
-        iconminmaxclose.add(Buttonclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 50, 50));
-
-        Buttonmax.setBackground(new java.awt.Color(5, 10, 46));
-        Buttonmax.setLayout(new java.awt.BorderLayout());
-
-        fullmax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fullmax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        fullmax.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fullmaxMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                fullmaxMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                fullmaxMouseExited(evt);
-            }
-        });
-        Buttonmax.add(fullmax, java.awt.BorderLayout.CENTER);
-
-        iconminmaxclose.add(Buttonmax, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 50, 50));
-
-        ButtonMin.setBackground(new java.awt.Color(5, 10, 46));
-        ButtonMin.setLayout(new java.awt.BorderLayout());
-        iconminmaxclose.add(ButtonMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        Header.add(iconminmaxclose, java.awt.BorderLayout.LINE_END);
-
-        getContentPane().add(Header, java.awt.BorderLayout.PAGE_START);
-
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jPanel3.setBackground(new java.awt.Color(102, 255, 0));
-
-        MenuIcon.setBackground(new java.awt.Color(5, 10, 46));
-        MenuIcon.setPreferredSize(new java.awt.Dimension(50, 450));
-        MenuIcon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(5, 10, 46));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_usuers.setBackground(new java.awt.Color(5, 10, 46));
         btn_usuers.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -157,106 +72,62 @@ public class Main_FRM extends javax.swing.JFrame {
         });
         btn_usuers.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel1.setText("          Usuarios");
+        jLabel1.setText("Usuarios");
         btn_usuers.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_usuers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 380, 50));
-        MenuIcon.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 380, 10));
-        MenuIcon.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 380, 10));
+        jPanel2.add(btn_usuers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 160, 30));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 160, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 160, 10));
 
         btn_material.setBackground(new java.awt.Color(5, 10, 46));
         btn_material.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel2.setText("          Material");
+        jLabel2.setText(" Material");
         btn_material.add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 380, 50));
-        MenuIcon.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 380, 10));
+        jPanel2.add(btn_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 160, 30));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 10));
 
         btn_entry.setBackground(new java.awt.Color(5, 10, 46));
         btn_entry.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel3.setText("          Usuarios");
+        jLabel3.setText("Usuarios");
         btn_entry.add(jLabel3, java.awt.BorderLayout.CENTER);
 
-        MenuIcon.add(btn_entry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 380, 48));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MenuIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MenuIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3, java.awt.BorderLayout.LINE_START);
-
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.add(btn_entry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 160, 30));
 
         container.setBackground(new java.awt.Color(255, 255, 255));
         container.setLayout(new java.awt.BorderLayout());
-        jPanel2.add(container, java.awt.BorderLayout.CENTER);
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+            .addComponent(container, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
-
-        setBounds(0, 0, 1000, 800);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_HeaderMousePressed
-
-    private void HeaderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_HeaderMouseDragged
-
-    private void fullmaxMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullmaxMouseExited
-        changecolor(Buttonmax, new Color(5, 10, 46));
-    }//GEN-LAST:event_fullmaxMouseExited
-
-    private void fullmaxMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullmaxMouseEntered
-        changecolor(Buttonmax, new Color(25, 29, 74));
-    }//GEN-LAST:event_fullmaxMouseEntered
-
-    private void fullmaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullmaxMouseClicked
-        if (this.getExtendedState() != Main_FRM.MAXIMIZED_BOTH) {
-            this.setExtendedState(Main_FRM.MAXIMIZED_BOTH);
-        } else {
-            this.setExtendedState(Main_FRM.NORMAL);
-        }
-    }//GEN-LAST:event_fullmaxMouseClicked
-
-    private void closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseExited
-        changecolor(Buttonclose, new Color(5, 10, 46));
-    }//GEN-LAST:event_closeMouseExited
-
-    private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered
-        changecolor(Buttonclose, new Color(25, 29, 74));
-    }//GEN-LAST:event_closeMouseEntered
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
 
     private void btn_usuersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuersMouseEntered
         btn_usuers.setBackground(new Color(25, 29, 74));
@@ -265,10 +136,6 @@ public class Main_FRM extends javax.swing.JFrame {
     private void btn_usuersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuersMouseExited
         btn_usuers.setBackground(new Color(5, 10, 46));
     }//GEN-LAST:event_btn_usuersMouseExited
-
-    public void changecolor(JPanel hover, Color rand) {
-        hover.setBackground(rand);
-    }
 
     /**
      * @param args the command line arguments
@@ -281,7 +148,7 @@ public class Main_FRM extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -306,29 +173,17 @@ public class Main_FRM extends javax.swing.JFrame {
         });
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ButtonMin;
-    private javax.swing.JPanel Buttonclose;
-    private javax.swing.JPanel Buttonmax;
-    private javax.swing.JPanel Header;
-    private javax.swing.JPanel MenuIcon;
     private javax.swing.JPanel btn_entry;
     private javax.swing.JPanel btn_material;
     private javax.swing.JPanel btn_usuers;
-    private javax.swing.JLabel close;
     public javax.swing.JDesktopPane container;
-    private javax.swing.JLabel fullmax;
-    private javax.swing.JPanel iconminmaxclose;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     // End of variables declaration//GEN-END:variables
-
 }

@@ -10,12 +10,12 @@ import com.enums.AutenticationMessage;
 import static com.enums.AutenticationMessage.BD_ERROR;
 import static com.enums.AutenticationMessage.LOGIN_SUCCESFULL;
 import static com.enums.AutenticationMessage.NO_USER;
-import static com.enums.AutenticationMessage.USER_EXIST;
 import static com.enums.AutenticationMessage.USER_NOPASS;
-import static com.enums.AutenticationMessage.USER_NO_EXIST;
 import com.enums.CRUDMessages;
 import static com.enums.CRUDMessages.REGISTER_FAILED;
 import static com.enums.CRUDMessages.REGISTER_SUCCESFULLY;
+import static com.enums.CRUDMessages.USER_EXIST;
+import static com.enums.CRUDMessages.USER_NO_EXIST;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -103,7 +103,7 @@ public class UserDB {
         }
     }
 
-    public AutenticationMessage isUserRegistered(String user) {
+    public CRUDMessages isUserRegistered(String user) {
         String query = "select * from user where user = ?";
         try {
 
@@ -122,7 +122,8 @@ public class UserDB {
 
         } catch (Exception e) {
             System.out.println(e);
-            return BD_ERROR;
+            return CRUDMessages.BD_ERROR;
+
         }
     }
 

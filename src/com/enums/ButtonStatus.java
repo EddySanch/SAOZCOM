@@ -8,9 +8,10 @@ package com.enums;
  *
  * @author eddy2
  */
-public enum AutenticationMessage {
-    USER_NOPASS,
-    NO_USER,
-    BD_ERROR,
-    LOGIN_SUCCESFULL;
+public enum ButtonStatus {
+    DEFAULT,
+    DELETE,
+    EDIT,
+    SAVE,
+    NEW;
 }

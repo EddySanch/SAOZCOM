@@ -15,7 +15,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
         initComponents();
 
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,6 +32,8 @@ public class User_FRM extends javax.swing.JInternalFrame {
         btn_new = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
+        btn_cancel = new javax.swing.JButton();
+        btn_save = new javax.swing.JButton();
         pnl_left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -54,8 +55,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
         txt_pass = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         cmb_role = new javax.swing.JComboBox<>();
-        btn_cancel = new javax.swing.JButton();
-        btn_save = new javax.swing.JButton();
         pnl_center = new javax.swing.JPanel();
         pnl_space = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -137,8 +136,8 @@ public class User_FRM extends javax.swing.JInternalFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 109, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.PAGE_END);
@@ -197,83 +196,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout pnl_footerLayout = new javax.swing.GroupLayout(pnl_footer);
-        pnl_footer.setLayout(pnl_footerLayout);
-        pnl_footerLayout.setHorizontalGroup(
-            pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_footerLayout.createSequentialGroup()
-                .addContainerGap(1676, Short.MAX_VALUE)
-                .addComponent(btn_new)
-                .addGap(186, 186, 186)
-                .addComponent(btn_edit)
-                .addGap(188, 188, 188)
-                .addComponent(btn_delete)
-                .addGap(23, 23, 23))
-        );
-        pnl_footerLayout.setVerticalGroup(
-            pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_footerLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_delete)
-                    .addComponent(btn_edit)
-                    .addComponent(btn_new))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(pnl_footer, java.awt.BorderLayout.PAGE_END);
-
-        pnl_left.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Nombre");
-
-        txtName.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtName.setBorder(null);
-
-        txt_surname.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_surname.setBorder(null);
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Apellidos");
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Teléfono");
-
-        txt_phone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_phone.setBorder(null);
-
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Correo");
-
-        txt_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_email.setBorder(null);
-
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Usuario");
-
-        txt_user.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_user.setBorder(null);
-
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Contraseña");
-
-        txt_pass.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_pass.setBorder(null);
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Rol");
-
-        cmb_role.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        cmb_role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
-
         btn_cancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
         btn_cancel.setText("Cancelar");
@@ -297,6 +219,89 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 btn_saveActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout pnl_footerLayout = new javax.swing.GroupLayout(pnl_footer);
+        pnl_footer.setLayout(pnl_footerLayout);
+        pnl_footerLayout.setHorizontalGroup(
+            pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_footerLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(btn_save)
+                .addGap(38, 38, 38)
+                .addComponent(btn_cancel)
+                .addGap(33, 33, 33)
+                .addComponent(btn_new)
+                .addGap(51, 51, 51)
+                .addComponent(btn_edit)
+                .addGap(65, 65, 65)
+                .addComponent(btn_delete)
+                .addContainerGap(1640, Short.MAX_VALUE))
+        );
+        pnl_footerLayout.setVerticalGroup(
+            pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_footerLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_delete)
+                    .addComponent(btn_edit)
+                    .addComponent(btn_new)
+                    .addComponent(btn_cancel)
+                    .addComponent(btn_save))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnl_footer, java.awt.BorderLayout.PAGE_END);
+
+        pnl_left.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Nombre");
+
+        txtName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtName.setBorder(null);
+
+        txt_surname.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_surname.setBorder(null);
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Apellidos");
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Teléfono");
+
+        txt_phone.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_phone.setBorder(null);
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Correo");
+
+        txt_email.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_email.setBorder(null);
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Usuario");
+
+        txt_user.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_user.setBorder(null);
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Contraseña");
+
+        txt_pass.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_pass.setBorder(null);
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Rol");
+
+        cmb_role.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cmb_role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
 
         javax.swing.GroupLayout pnl_leftLayout = new javax.swing.GroupLayout(pnl_left);
         pnl_left.setLayout(pnl_leftLayout);
@@ -328,12 +333,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnl_leftLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnl_leftLayout.createSequentialGroup()
-                                .addComponent(btn_save)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_cancel))
-                            .addComponent(cmb_role, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(cmb_role, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnl_leftLayout.setVerticalGroup(
@@ -341,49 +341,45 @@ public class User_FRM extends javax.swing.JInternalFrame {
             .addGroup(pnl_leftLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(txtName)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_surname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator4)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 9, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
                 .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jSeparator5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_email)
+                .addComponent(txt_email, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator6)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5)
-                .addComponent(txt_user)
+                .addComponent(txt_user, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator7)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 11, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5)
-                .addComponent(txt_pass)
+                .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cmb_role)
-                .addGap(28, 28, 28)
-                .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancel)
-                    .addComponent(btn_save))
-                .addContainerGap())
+                .addGap(86, 86, 86))
         );
 
         jPanel1.add(pnl_left, java.awt.BorderLayout.LINE_START);
@@ -396,11 +392,11 @@ public class User_FRM extends javax.swing.JInternalFrame {
         pnl_space.setLayout(pnl_spaceLayout);
         pnl_spaceLayout.setHorizontalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+            .addGap(0, 12, Short.MAX_VALUE)
         );
         pnl_spaceLayout.setVerticalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         pnl_center.add(pnl_space, java.awt.BorderLayout.LINE_START);
@@ -452,7 +448,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 72, Short.MAX_VALUE)
+            .addGap(0, 68, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

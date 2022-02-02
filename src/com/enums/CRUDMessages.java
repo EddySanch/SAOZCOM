@@ -15,7 +15,10 @@ public enum CRUDMessages {
     UPDATE_FAILED,
     DELETE_SUCCESFULLY,
     DELETE_FAILED,
-    EMPTY_FIELDS;
+    USER_EXIST,
+    USER_NO_EXIST,
+    EMPTY_FIELDS,
+    BD_ERROR;
 
     private String name;
 
