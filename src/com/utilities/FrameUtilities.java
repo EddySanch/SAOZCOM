@@ -4,12 +4,14 @@
  */
 package com.utilities;
 
-import com.UI.Example;
+import com.UI.Main_FRM;
+import com.enums.ButtonStatus;
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import javax.swing.ButtonModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -80,7 +82,7 @@ public class FrameUtilities {
         frame.setExtendedState(frame.getExtendedState() | frame.MAXIMIZED_BOTH);
     }
 
-    public static boolean isClosed(Example main, JInternalFrame frame) {
+    public static boolean isClosed(Main_FRM main, JInternalFrame frame) {
         JInternalFrame[] actives = main.container.getAllFrames();
         boolean closed = true;
         int i = 0;
@@ -97,10 +99,29 @@ public class FrameUtilities {
         return closed;
     }
 
-    public static void OpenInternalFrame(JInternalFrame frame, Example main) {
+    public static void OpenInternalFrame(JInternalFrame frame, Main_FRM main) {
         if (isClosed(main, frame)) {
             main.container.add(frame);
             frame.setVisible(true);
+        }
+    }
+
+    public static void enableDisableButtons(ButtonModel save, ButtonModel cancel, ButtonModel newItem, ButtonModel edit, ButtonModel delete, ButtonStatus status) {
+        switch (status) {
+            case DEFAULT:
+                save.setEnabled(true);
+                newItem.setEnabled(false);
+                edit.setEnabled(false);
+                delete.setEnabled(false);
+                cancel.setEnabled(true);
+                break;
+            case EDIT:
+                save.setEnabled(true);
+                newItem.setEnabled(false);
+                edit.setEnabled(true);
+                delete.setEnabled(true);
+                cancel.setEnabled(true);
+                break;
         }
     }
 

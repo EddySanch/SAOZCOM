@@ -410,7 +410,7 @@ public class Login_FRM extends javax.swing.JFrame {
     }
 
     private void showMain() {
-        JFrame main = new Example();
+        JFrame main = new Main_FRM();
         //main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //main.setResizable(true);
         //main.setExtendedState(JFrame.MAXIMIZED_BOTH);
