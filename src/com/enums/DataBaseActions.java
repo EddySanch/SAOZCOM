@@ -14,6 +14,10 @@ public enum DataBaseActions {
     UPDATE_REGISTER,
     REPORT,
     CANCEL,
+    DEFAULT,
+    EDIT_REGISTER,
+    SAVE,
     NEW_REGISTER,
+    ROW_SELECTED;
 
 }
