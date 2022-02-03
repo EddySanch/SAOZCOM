@@ -5,7 +5,7 @@
 package com.utilities;
 
 import com.UI.Main_FRM;
-import com.enums.ButtonStatus;
+import com.enums.DataBaseActions;
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
@@ -106,21 +106,28 @@ public class FrameUtilities {
         }
     }
 
-    public static void enableDisableButtons(ButtonModel save, ButtonModel cancel, ButtonModel newItem, ButtonModel edit, ButtonModel delete, ButtonStatus status) {
+    public static void enableDisableButtons(ButtonModel save, ButtonModel update, ButtonModel newItem, ButtonModel edit, ButtonModel delete, DataBaseActions status) {
         switch (status) {
             case DEFAULT:
                 save.setEnabled(true);
+                update.setEnabled(false);
                 newItem.setEnabled(false);
                 edit.setEnabled(false);
                 delete.setEnabled(false);
-                cancel.setEnabled(true);
                 break;
-            case EDIT:
+            case ROW_SELECTED:
                 save.setEnabled(true);
+                update.setEnabled(false);
                 newItem.setEnabled(false);
                 edit.setEnabled(true);
                 delete.setEnabled(true);
-                cancel.setEnabled(true);
+                break;
+            case EDIT_REGISTER:
+                save.setEnabled(false);
+                update.setEnabled(true);
+                newItem.setEnabled(true);
+                edit.setEnabled(false);
+                delete.setEnabled(true);
                 break;
         }
     }

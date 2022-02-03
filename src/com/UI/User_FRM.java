@@ -32,7 +32,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
         btn_new = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
-        btn_cancel = new javax.swing.JButton();
+        btn_actualizar = new javax.swing.JButton();
         btn_save = new javax.swing.JButton();
         pnl_left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -196,15 +196,15 @@ public class User_FRM extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_cancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/ic_grabar.png"))); // NOI18N
-        btn_cancel.setText("Cancelar");
-        btn_cancel.setBorderPainted(false);
-        btn_cancel.setContentAreaFilled(false);
-        btn_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+        btn_actualizar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/actualizar.png"))); // NOI18N
+        btn_actualizar.setText("Actualizar");
+        btn_actualizar.setBorderPainted(false);
+        btn_actualizar.setContentAreaFilled(false);
+        btn_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelActionPerformed(evt);
+                btn_actualizarActionPerformed(evt);
             }
         });
 
@@ -228,14 +228,14 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 .addGap(22, 22, 22)
                 .addComponent(btn_save)
                 .addGap(38, 38, 38)
-                .addComponent(btn_cancel)
+                .addComponent(btn_actualizar)
                 .addGap(33, 33, 33)
                 .addComponent(btn_new)
                 .addGap(51, 51, 51)
                 .addComponent(btn_edit)
                 .addGap(65, 65, 65)
                 .addComponent(btn_delete)
-                .addContainerGap(1640, Short.MAX_VALUE))
+                .addContainerGap(1634, Short.MAX_VALUE))
         );
         pnl_footerLayout.setVerticalGroup(
             pnl_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,7 +245,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
                     .addComponent(btn_delete)
                     .addComponent(btn_edit)
                     .addComponent(btn_new)
-                    .addComponent(btn_cancel)
+                    .addComponent(btn_actualizar)
                     .addComponent(btn_save))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -735,10 +735,10 @@ public class User_FRM extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btn_newActionPerformed
 
-    private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
+    private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
 
 
-    }//GEN-LAST:event_btn_cancelActionPerformed
+    }//GEN-LAST:event_btn_actualizarActionPerformed
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
 
@@ -773,7 +773,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
     private javax.swing.JButton bt_eliminar1;
     private javax.swing.JButton bt_guardar1;
     private javax.swing.JButton bt_nuevo1;
-    public javax.swing.JButton btn_cancel;
+    public javax.swing.JButton btn_actualizar;
     public javax.swing.JButton btn_delete;
     public javax.swing.JButton btn_edit;
     public javax.swing.JButton btn_new;

@@ -20,10 +20,4 @@ public enum CRUDMessages {
     EMPTY_FIELDS,
     BD_ERROR;
 
-    private String name;
-
-    @Override
-    public String toString() {
-        return this.name;
-    }
 }

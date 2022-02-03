@@ -12,8 +12,12 @@ import static com.enums.AutenticationMessage.LOGIN_SUCCESFULL;
 import static com.enums.AutenticationMessage.NO_USER;
 import static com.enums.AutenticationMessage.USER_NOPASS;
 import com.enums.CRUDMessages;
+import static com.enums.CRUDMessages.DELETE_FAILED;
+import static com.enums.CRUDMessages.DELETE_SUCCESFULLY;
 import static com.enums.CRUDMessages.REGISTER_FAILED;
 import static com.enums.CRUDMessages.REGISTER_SUCCESFULLY;
+import static com.enums.CRUDMessages.UPDATE_FAILED;
+import static com.enums.CRUDMessages.UPDATE_SUCCESFULLY;
 import static com.enums.CRUDMessages.USER_EXIST;
 import static com.enums.CRUDMessages.USER_NO_EXIST;
 import java.sql.Connection;
@@ -113,9 +117,30 @@ public class UserDB {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-
                 return USER_EXIST;
+            } else {
+                return USER_NO_EXIST;
+            }
 
+        } catch (Exception e) {
+            System.out.println(e);
+            return CRUDMessages.BD_ERROR;
+
+        }
+    }
+
+    public CRUDMessages isUserRegisteredUpdate(String user, int id) {
+        String query = "select * from user where user = ? and id != ?";
+        try {
+
+            conn = ConnectionBD.getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, user);
+            preparedStatement.setInt(2, id);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return USER_EXIST;
             } else {
                 return USER_NO_EXIST;
             }
@@ -145,6 +170,41 @@ public class UserDB {
             System.out.println(e.getMessage());
         }
         return result == 1 ? REGISTER_SUCCESFULLY : REGISTER_FAILED;
+    }
+
+    public CRUDMessages updateUser(User user) {
+        int result = 0;
+        String query = "UPDATE USER SET name = ?, lastname = ?, phone = ?, email = ?, user = ?, pass = ?, role = ? where id = ?;";
+        try {
+            conn = ConnectionBD.getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getLastname());
+            preparedStatement.setString(3, user.getPhone());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setString(5, user.getUsername());
+            preparedStatement.setString(6, user.getPass());
+            preparedStatement.setString(7, user.getRole());
+            preparedStatement.setInt(8, user.getId());
+            result = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return result == 1 ? UPDATE_SUCCESFULLY : UPDATE_FAILED;
+    }
+
+    public CRUDMessages deleteUser(int id) {
+        int result = 0;
+        String query = "DELETE FROM USER where id = ?;";
+        try {
+            conn = ConnectionBD.getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            result = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return result == 1 ? DELETE_SUCCESFULLY : DELETE_FAILED;
     }
 
 }
