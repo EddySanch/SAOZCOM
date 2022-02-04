@@ -115,10 +115,6 @@ public class UserController implements ActionListener, MouseListener {
                         clearFields();
                     }
                 }
-
-                // CRUDmsj = userDB.deleteUser(user.getId());
-                //clearFields();
-                //updateTable();
                 break;
 
         }

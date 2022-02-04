@@ -4,6 +4,7 @@
  */
 package com.UI;
 
+import com.controllers.MaterialController;
 import com.controllers.UserController;
 import com.utilities.FrameUtilities;
 import java.awt.Color;
@@ -53,7 +54,7 @@ public class Main_FRM extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         btn_entry = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        Entradas = new javax.swing.JLabel();
         container = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +64,9 @@ public class Main_FRM extends javax.swing.JFrame {
 
         btn_usuers.setBackground(new java.awt.Color(5, 10, 46));
         btn_usuers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_usuersMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_usuersMouseEntered(evt);
             }
@@ -75,7 +79,7 @@ public class Main_FRM extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/user.png"))); // NOI18N
         jLabel1.setText("Usuarios");
         btn_usuers.add(jLabel1, java.awt.BorderLayout.CENTER);
 
@@ -84,12 +88,23 @@ public class Main_FRM extends javax.swing.JFrame {
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 160, 10));
 
         btn_material.setBackground(new java.awt.Color(5, 10, 46));
+        btn_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_materialMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_materialMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_materialMouseExited(evt);
+            }
+        });
         btn_material.setLayout(new java.awt.BorderLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/material.png"))); // NOI18N
         jLabel2.setText(" Material");
         btn_material.add(jLabel2, java.awt.BorderLayout.CENTER);
 
@@ -97,14 +112,27 @@ public class Main_FRM extends javax.swing.JFrame {
         jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 10));
 
         btn_entry.setBackground(new java.awt.Color(5, 10, 46));
+        btn_entry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_entryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_entryMouseExited(evt);
+            }
+        });
         btn_entry.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/full_screen_32px.png"))); // NOI18N
-        jLabel3.setText("Usuarios");
-        btn_entry.add(jLabel3, java.awt.BorderLayout.CENTER);
+        Entradas.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        Entradas.setForeground(new java.awt.Color(255, 255, 255));
+        Entradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Entradas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/assets/input.png"))); // NOI18N
+        Entradas.setText("Entradas");
+        Entradas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EntradasMouseEntered(evt);
+            }
+        });
+        btn_entry.add(Entradas, java.awt.BorderLayout.CENTER);
 
         jPanel2.add(btn_entry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 160, 30));
 
@@ -136,6 +164,34 @@ public class Main_FRM extends javax.swing.JFrame {
     private void btn_usuersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuersMouseExited
         btn_usuers.setBackground(new Color(5, 10, 46));
     }//GEN-LAST:event_btn_usuersMouseExited
+
+    private void btn_materialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseEntered
+       btn_material.setBackground(new Color(25, 29, 74));
+    }//GEN-LAST:event_btn_materialMouseEntered
+
+    private void btn_materialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseExited
+         btn_material.setBackground(new Color(5, 10, 46));
+    }//GEN-LAST:event_btn_materialMouseExited
+
+    private void EntradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntradasMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradasMouseEntered
+
+    private void btn_entryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entryMouseExited
+        btn_entry.setBackground(new Color(25, 29, 74));
+    }//GEN-LAST:event_btn_entryMouseExited
+
+    private void btn_entryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entryMouseEntered
+       btn_entry.setBackground(new Color(25, 29, 74));
+    }//GEN-LAST:event_btn_entryMouseEntered
+
+    private void btn_usuersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuersMouseClicked
+         UserController userController = new UserController(this);
+    }//GEN-LAST:event_btn_usuersMouseClicked
+
+    private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
+        MaterialController materialController = new MaterialController(this);
+    }//GEN-LAST:event_btn_materialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -174,13 +230,13 @@ public class Main_FRM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Entradas;
     private javax.swing.JPanel btn_entry;
     private javax.swing.JPanel btn_material;
     private javax.swing.JPanel btn_usuers;
     public javax.swing.JDesktopPane container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

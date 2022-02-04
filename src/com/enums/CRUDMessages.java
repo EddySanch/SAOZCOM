@@ -18,6 +18,8 @@ public enum CRUDMessages {
     USER_EXIST,
     USER_NO_EXIST,
     EMPTY_FIELDS,
+    SIATEL_EXIST,
+    SIATEL_NO_EXIST,
     BD_ERROR;
 
 }

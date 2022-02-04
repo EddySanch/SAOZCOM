@@ -90,7 +90,6 @@ public class FrameUtilities {
         while (i < actives.length && closed) {
 
             if (actives[i].getClass() == frame.getClass()) {
-
                 closed = false;
             }
 
@@ -100,6 +99,7 @@ public class FrameUtilities {
     }
 
     public static void OpenInternalFrame(JInternalFrame frame, Main_FRM main) {
+        main.container.removeAll();
         if (isClosed(main, frame)) {
             main.container.add(frame);
             frame.setVisible(true);

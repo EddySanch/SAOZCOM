@@ -2,7 +2,7 @@ package com.UI;
 
 import javax.swing.table.TableColumnModel;
 
-public class User_FRM extends javax.swing.JInternalFrame {
+public class Material_FRM extends javax.swing.JInternalFrame {
 
     //private final Cls_Productos CP;
     TableColumnModel columnModel;
@@ -11,10 +11,11 @@ public class User_FRM extends javax.swing.JInternalFrame {
     int y = 0;
 //-----------------
 
-    public User_FRM() {
+    public Material_FRM() {
         initComponents();
-
+        
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,28 +38,22 @@ public class User_FRM extends javax.swing.JInternalFrame {
         pnl_left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        txtName = new javax.swing.JTextField();
-        txt_surname = new javax.swing.JTextField();
+        txt_siatel = new javax.swing.JTextField();
+        txt_ax = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txt_phone = new javax.swing.JTextField();
+        txt_description = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        txt_email = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
-        txt_user = new javax.swing.JTextField();
-        jSeparator8 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        txt_pass = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        cmb_role = new javax.swing.JComboBox<>();
+        cmb_uom = new javax.swing.JComboBox<>();
+        txt_quantity = new javax.swing.JTextField();
         pnl_center = new javax.swing.JPanel();
         pnl_space = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbl_users = new javax.swing.JTable();
+        tbl_materials = new javax.swing.JTable();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel3 = new javax.swing.JPanel();
         pnl_header1 = new javax.swing.JPanel();
@@ -116,7 +111,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Roboto Light", 1, 36)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Administración de Usuarios");
+        jLabel8.setText("Administración de Materiales");
         jPanel2.add(jLabel8, java.awt.BorderLayout.PAGE_START);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -147,7 +142,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
 
         jLabel9.setFont(new java.awt.Font("Roboto Light", 2, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Llene la información respectiva para registrar un usuario");
+        jLabel9.setText("Llene la información respectiva para registrar los materiales");
         jPanel8.add(jLabel9, java.awt.BorderLayout.CENTER);
 
         jPanel4.add(jPanel8, java.awt.BorderLayout.CENTER);
@@ -256,57 +251,43 @@ public class User_FRM extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Nombre");
+        jLabel1.setText("Código SIATEL");
 
-        txtName.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txtName.setBorder(null);
+        txt_siatel.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_siatel.setBorder(null);
 
-        txt_surname.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txt_surname.setBorder(null);
+        txt_ax.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_ax.setBorder(null);
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Apellidos");
+        jLabel2.setText("Código AX");
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Teléfono");
+        jLabel3.setText("Descripción");
 
-        txt_phone.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txt_phone.setBorder(null);
-        txt_phone.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_phoneKeyTyped(evt);
-            }
-        });
+        txt_description.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_description.setBorder(null);
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Correo");
-
-        txt_email.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txt_email.setBorder(null);
+        jLabel4.setText("Cantidad");
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Usuario");
+        jLabel5.setText("Unidad de medida");
 
-        txt_user.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txt_user.setBorder(null);
+        cmb_uom.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cmb_uom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Metro", "Kilogramo", "Juego", "Pieza", "Rollo" }));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Contraseña");
-
-        txt_pass.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txt_pass.setBorder(null);
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Rol");
-
-        cmb_role.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        cmb_role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
+        txt_quantity.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txt_quantity.setBorder(null);
+        txt_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_quantityKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_leftLayout = new javax.swing.GroupLayout(pnl_left);
         pnl_left.setLayout(pnl_leftLayout);
@@ -314,31 +295,21 @@ public class User_FRM extends javax.swing.JInternalFrame {
             pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnl_leftLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_leftLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnl_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                            .addComponent(jSeparator3)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_surname)
-                            .addComponent(jSeparator4)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_phone)
-                            .addComponent(jSeparator5)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_email)
-                            .addComponent(jSeparator6)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_user)
-                            .addComponent(jSeparator7)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_pass)
-                            .addComponent(jSeparator8)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pnl_leftLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(cmb_role, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(txt_siatel)
+                    .addComponent(jSeparator3)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_ax)
+                    .addComponent(jSeparator4)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_description)
+                    .addComponent(jSeparator5)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmb_uom, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_quantity, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         pnl_leftLayout.setVerticalGroup(
@@ -347,44 +318,32 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addComponent(txt_siatel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_surname, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 9, Short.MAX_VALUE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel3)
+                .addComponent(txt_ax)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_email, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_quantity)
+                .addGap(10, 10, 10)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(txt_user, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 11, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5)
-                .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmb_role)
-                .addGap(86, 86, 86))
+                .addComponent(cmb_uom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(201, 201, 201))
         );
 
         jPanel1.add(pnl_left, java.awt.BorderLayout.LINE_START);
@@ -401,13 +360,13 @@ public class User_FRM extends javax.swing.JInternalFrame {
         );
         pnl_spaceLayout.setVerticalGroup(
             pnl_spaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 541, Short.MAX_VALUE)
         );
 
         pnl_center.add(pnl_space, java.awt.BorderLayout.LINE_START);
 
-        tbl_users.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        tbl_users.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_materials.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        tbl_materials.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -418,7 +377,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(tbl_users);
+        jScrollPane2.setViewportView(tbl_materials);
 
         pnl_center.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
@@ -773,18 +732,16 @@ public class User_FRM extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_saveActionPerformed
 
-    private void txt_phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_phoneKeyTyped
+    private void txt_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_quantityKeyTyped
         int key = evt.getKeyChar();
 
-        boolean numeros = (key >= 48 && key <= 57);
+        boolean numeros = (key >= 48 && key <= 57) || key == 46;
         if (!numeros) {
             evt.consume();
         }
-        if (txt_phone.getText().length() > 9) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_phoneKeyTyped
+    }//GEN-LAST:event_txt_quantityKeyTyped
 
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_actualizar1;
     private javax.swing.JButton bt_eliminar1;
@@ -796,7 +753,7 @@ public class User_FRM extends javax.swing.JInternalFrame {
     public javax.swing.JButton btn_new;
     private javax.swing.JButton btn_register1;
     public javax.swing.JButton btn_save;
-    public javax.swing.JComboBox<String> cmb_role;
+    public javax.swing.JComboBox<String> cmb_uom;
     private javax.swing.JTextField email1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
@@ -814,8 +771,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -840,8 +795,6 @@ public class User_FRM extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField pass1;
     private javax.swing.JPanel pnl_center;
@@ -855,17 +808,15 @@ public class User_FRM extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pnl_space;
     private javax.swing.JPanel pnl_space1;
     private javax.swing.JComboBox<String> role1;
-    public javax.swing.JTable tbl_users;
+    public javax.swing.JTable tbl_materials;
     private javax.swing.JTable tbl_users1;
-    public javax.swing.JTextField txtName;
     private javax.swing.JTextField txtName1;
-    public javax.swing.JTextField txt_email;
-    public javax.swing.JTextField txt_pass;
-    public javax.swing.JTextField txt_phone;
+    public javax.swing.JTextField txt_ax;
+    public javax.swing.JTextField txt_description;
     private javax.swing.JTextField txt_phone1;
-    public javax.swing.JTextField txt_surname;
+    public javax.swing.JTextField txt_quantity;
+    public javax.swing.JTextField txt_siatel;
     private javax.swing.JTextField txt_surname1;
-    public javax.swing.JTextField txt_user;
     private javax.swing.JTextField user1;
     // End of variables declaration//GEN-END:variables
 }
