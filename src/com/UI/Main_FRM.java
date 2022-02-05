@@ -4,7 +4,7 @@
  */
 package com.UI;
 
-import com.controllers.MaterialController;
+//import com.controllers.MaterialController;
 import com.controllers.UserController;
 import com.utilities.FrameUtilities;
 import java.awt.Color;
@@ -113,6 +113,9 @@ public class Main_FRM extends javax.swing.JFrame {
 
         btn_entry.setBackground(new java.awt.Color(5, 10, 46));
         btn_entry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_entryMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_entryMouseEntered(evt);
             }
@@ -166,11 +169,11 @@ public class Main_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_usuersMouseExited
 
     private void btn_materialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseEntered
-       btn_material.setBackground(new Color(25, 29, 74));
+        btn_material.setBackground(new Color(25, 29, 74));
     }//GEN-LAST:event_btn_materialMouseEntered
 
     private void btn_materialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseExited
-         btn_material.setBackground(new Color(5, 10, 46));
+        btn_material.setBackground(new Color(5, 10, 46));
     }//GEN-LAST:event_btn_materialMouseExited
 
     private void EntradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntradasMouseEntered
@@ -182,16 +185,20 @@ public class Main_FRM extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_entryMouseExited
 
     private void btn_entryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entryMouseEntered
-       btn_entry.setBackground(new Color(25, 29, 74));
+        btn_entry.setBackground(new Color(25, 29, 74));
     }//GEN-LAST:event_btn_entryMouseEntered
 
     private void btn_usuersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuersMouseClicked
-         UserController userController = new UserController(this);
+        UserController userController = new UserController(this);
     }//GEN-LAST:event_btn_usuersMouseClicked
 
     private void btn_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_materialMouseClicked
-        MaterialController materialController = new MaterialController(this);
+        //MaterialController materialController = new MaterialController(this);
     }//GEN-LAST:event_btn_materialMouseClicked
+
+    private void btn_entryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entryMouseClicked
+
+    }//GEN-LAST:event_btn_entryMouseClicked
 
     /**
      * @param args the command line arguments
