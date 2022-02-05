@@ -21,5 +21,4 @@ public enum CRUDMessages {
     SIATEL_EXIST,
     SIATEL_NO_EXIST,
     BD_ERROR;
-
 }
